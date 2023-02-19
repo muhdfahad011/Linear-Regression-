@@ -18,9 +18,8 @@ if __name__ == "__main__":
     colNames = ["label", "features"]
     df = data.toDF(colNames)
 
-    # Note, there are lots of cases where you can avoid going from an RDD to a DataFrame.
-    # Perhaps you're importing data from a real database. Or you are using structured streaming
-    # to get your data.
+    # we're importing data from a real database. We are using structured streaming
+    # to get our data.
 
     # Let's split our data into training data and testing data
     trainTest = df.randomSplit([0.5, 0.5])
@@ -33,7 +32,7 @@ if __name__ == "__main__":
     # Train the model using our training data
     model = lir.fit(trainingDF)
 
-    # Now see if we can predict values in our test data.
+    # we're can predict values in our test data.
     # Generate predictions using our linear regression model for all features in our
     # test dataframe:
     fullPredictions = model.transform(testDF).cache()
