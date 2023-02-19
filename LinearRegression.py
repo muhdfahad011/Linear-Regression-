@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # # Linear Regression
 
-# Let's fabricate some data that shows a roughly linear relationship between page speed and amount purchased:
+#  linear relationship between page speed and amount purchased:
 
 # In[1]:
 
@@ -18,7 +15,7 @@ purchaseAmount = 100 - (pageSpeeds + np.random.normal(0, 0.1, 1000)) * 3
 scatter(pageSpeeds, purchaseAmount)
 
 
-# As we only have two features, we can keep it simple and just use scipy.state.linregress:
+
 
 # In[2]:
 
@@ -28,7 +25,7 @@ from scipy import stats
 slope, intercept, r_value, p_value, std_err = stats.linregress(pageSpeeds, purchaseAmount)
 
 
-# Not surprisngly, our R-squared value shows a really good fit:
+# 
 
 # In[3]:
 
@@ -36,7 +33,7 @@ slope, intercept, r_value, p_value, std_err = stats.linregress(pageSpeeds, purch
 r_value ** 2
 
 
-# Let's use the slope and intercept we got from the regression to plot predicted values vs. observed:
+# using slope and intercept we got from the regression to plot predicted values vs. observed:
 
 # In[4]:
 
@@ -53,9 +50,7 @@ plt.plot(pageSpeeds, fitLine, c='r')
 plt.show()
 
 
-# ## Activity
 
-# Try increasing the random variation in the test data, and see what effect it has on the r-squared error value.
 
 # In[ ]:
 
